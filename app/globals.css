@@ -1,0 +1,693 @@
+:root {
+  --bg: #f7f1ea;
+  --surface: rgba(255, 253, 249, 0.88);
+  --card: #fffdf9;
+  --text: #2e2a26;
+  --muted: #6d635a;
+  --accent: #e88952;
+  --accent-deep: #c8642f;
+  --accent-soft: #ffd8b8;
+  --green: #5f8b6a;
+  --line: rgba(46, 42, 38, 0.1);
+  --shadow: 0 22px 58px rgba(96, 58, 29, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 245, 0.94), rgba(247, 241, 234, 0.94)),
+    url("/pet-shop-interior-carousel.png") center top / cover fixed;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.page-shell {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 216, 184, 0.72), transparent 28%),
+    linear-gradient(180deg, rgba(255, 250, 245, 0.84), rgba(246, 238, 229, 0.96) 58%, #f0e2d3);
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 248, 241, 0.8);
+  border-bottom: 1px solid rgba(46, 42, 38, 0.06);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), #f3b17a);
+  color: white;
+  box-shadow: 0 12px 24px rgba(232, 137, 82, 0.28);
+  font-size: 22px;
+}
+
+.brand-text small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent-deep);
+}
+
+.hero {
+  padding: 70px 0 48px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(46, 42, 38, 0.06);
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.hero h1 {
+  margin-bottom: 22px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.hero p {
+  max-width: 620px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.hero-actions,
+.space-nav,
+.space-dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  box-shadow: 0 16px 30px rgba(200, 100, 47, 0.25);
+}
+
+.btn-secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.stat-card,
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.stat-card {
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.stat-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 28px;
+}
+
+.stat-card span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero-media {
+  position: relative;
+  min-height: 520px;
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: url("/pet-shop-interior-carousel.png") center top / cover;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(24, 18, 12, 0.02), rgba(24, 18, 12, 0.3));
+}
+
+.hero-badge {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1;
+  padding: 18px 20px;
+  border-radius: 22px;
+  color: white;
+  background: rgba(28, 22, 18, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(14px);
+}
+
+.hero-badge strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.hero-badge span {
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.6;
+}
+
+.section {
+  padding: 56px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.section-head p {
+  max-width: 560px;
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.service-grid,
+.feature-grid,
+.review-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.review-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  border-radius: 24px;
+}
+
+.service-card,
+.feature-card,
+.review-card,
+.booking-card,
+.contact-card {
+  padding: 26px;
+}
+
+.service-icon,
+.feature-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(232, 137, 82, 0.16), rgba(255, 216, 184, 0.7));
+  font-size: 24px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.price-tag {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.space-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--card);
+}
+
+.space-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.space-slide {
+  position: relative;
+  min-width: 100%;
+  min-height: 520px;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.space-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(18, 14, 10, 0.04), rgba(18, 14, 10, 0.55));
+}
+
+.space-slide-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("/pet-shop-interior-carousel.png");
+  background-repeat: no-repeat;
+  background-size: 100% 300%;
+  background-position: center top;
+}
+
+.space-slide[data-focus="middle"] .space-slide-image {
+  background-position: center center;
+}
+
+.space-slide[data-focus="bottom"] .space-slide-image {
+  background-position: center bottom;
+}
+
+.gallery-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 460px;
+  max-width: 460px;
+  color: white;
+}
+
+.rating {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.gallery-content h3 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 1.18;
+}
+
+.gallery-content p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.75;
+}
+
+.space-carousel-controls {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 24px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.space-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  cursor: pointer;
+}
+
+.space-dot.is-active {
+  background: #fff;
+  transform: scale(1.12);
+}
+
+.space-nav button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(24, 18, 12, 0.16);
+}
+
+.review-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.review-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.review-card small {
+  color: var(--muted);
+}
+
+.stars {
+  color: var(--accent-deep);
+  white-space: nowrap;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.booking-list,
+.contact-list {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.booking-list li,
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(46, 42, 38, 0.1);
+  border-radius: 16px;
+  padding: 14px 16px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(232, 137, 82, 0.8);
+  box-shadow: 0 0 0 4px rgba(232, 137, 82, 0.12);
+}
+
+textarea {
+  min-height: 116px;
+  resize: vertical;
+}
+
+.footer {
+  padding: 28px 0 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(46, 42, 38, 0.08);
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 960px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-grid,
+  .booking,
+  .service-grid,
+  .feature-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head,
+  .footer-row {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .hero {
+    padding-top: 46px;
+  }
+
+  .hero-media {
+    min-height: 420px;
+  }
+
+  .space-slide {
+    min-height: 420px;
+  }
+
+  .gallery-content {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 20px, 1120px);
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-actions,
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-media,
+  .space-slide {
+    min-height: 340px;
+  }
+
+  .space-slide {
+    padding: 20px;
+  }
+
+  .gallery-content {
+    min-height: 290px;
+  }
+
+  .gallery-content h3 {
+    font-size: 24px;
+  }
+
+  .space-carousel-controls {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+}
