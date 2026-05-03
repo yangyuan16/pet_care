@@ -1,7 +1,7 @@
 import { BookingForm } from "@/components/booking-form";
 import { Reveal } from "@/components/reveal";
 
-const storeAddress = "广东省东莞市大岭山镇南一路56号";
+const storeAddress = "广东省东莞市大岭山镇南一路 6 号";
 const mapUrl = `https://uri.amap.com/search?keyword=${encodeURIComponent(
   storeAddress,
 )}&city=东莞&view=map&src=mypage&coordinate=gaode&callnative=0`;
@@ -14,7 +14,7 @@ export function BookingSection() {
           <article className="card booking-card">
             <h3>预约前你会关心的事</h3>
             <p>
-              首次到店可先做简单问询，我们会根据宠物体型、毛量和性格，推荐更合适的洗护项目与时长安排。
+              首次到店可先做简单咨询，我们会根据宠物体型、毛量和性格，推荐更合适的洗护项目与时长安排。
             </p>
             <ul className="booking-list">
               <li>
@@ -45,7 +45,7 @@ export function BookingSection() {
             <div className="store-info" aria-label="门店信息">
               <div className="store-map">
                 <iframe
-                  title="爪爪云洗护门店地图"
+                  title="宠物洗护门店地图"
                   src={mapUrl}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

@@ -189,6 +189,12 @@ p {
   box-shadow: 0 16px 30px rgba(200, 100, 47, 0.25);
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
 .btn-secondary {
   color: var(--text);
   background: rgba(255, 255, 255, 0.72);
@@ -731,6 +737,24 @@ textarea:focus {
 textarea {
   min-height: 116px;
   resize: vertical;
+}
+
+.form-feedback {
+  margin: 0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-feedback.is-success {
+  color: #315f3c;
+  background: rgba(95, 139, 106, 0.14);
+}
+
+.form-feedback.is-error {
+  color: #a33f24;
+  background: rgba(200, 100, 47, 0.14);
 }
 
 .footer {
