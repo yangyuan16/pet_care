@@ -414,18 +414,9 @@ p {
 .space-slide-image {
   position: absolute;
   inset: 0;
-  background-image: url("/pet-shop-interior-carousel.png");
   background-repeat: no-repeat;
-  background-size: 100% 300%;
-  background-position: center top;
-}
-
-.space-slide[data-focus="middle"] .space-slide-image {
+  background-size: cover;
   background-position: center center;
-}
-
-.space-slide[data-focus="bottom"] .space-slide-image {
-  background-position: center bottom;
 }
 
 .gallery-content {
@@ -649,6 +640,28 @@ p {
   gap: 22px;
 }
 
+.store-info {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.store-map {
+  width: 100%;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.store-map iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+}
+
 .booking-list,
 .contact-list {
   display: grid;
@@ -657,6 +670,10 @@ p {
   padding: 0;
   list-style: none;
   color: var(--muted);
+}
+
+.store-info .contact-list {
+  margin-top: 0;
 }
 
 .booking-list li,
@@ -832,5 +849,11 @@ textarea {
     left: 18px;
     right: 18px;
     bottom: 18px;
+  }
+
+  .store-map,
+  .store-map iframe {
+    min-height: 300px;
+    height: 300px;
   }
 }

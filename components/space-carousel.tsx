@@ -4,22 +4,25 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    focus: "top",
+    image: "/space-slide-1.png",
+    imagePosition: "left center",
     label: "前台接待区",
     title: "高端接待与精品陈列空间",
     description: "温润石材、木质陈列和柔和灯光营造出专属贵客的到店感。",
   },
   {
-    focus: "middle",
+    image: "/space-slide-2.png",
+    imagePosition: "center center",
     label: "洗护操作区",
-    title: "明亮透明的专业洗护区",
-    description: "独立洗护位、玻璃分区和统一工具收纳，让操作流程清晰，也更让人放心。",
+    title: "明亮通透的洗护操作区域",
+    description: "视线更聚焦在洗护工位与陈列细节，轮播切换时能明确看到第二张场景。",
   },
   {
-    focus: "bottom",
+    image: "/space-slide-3.png",
+    imagePosition: "right center",
     label: "等候休息区",
-    title: "柔软等候区与宠物互动氛围",
-    description: "弧形沙发、自然采光和安静动线，让等待过程也像在精品酒店大堂。",
+    title: "临窗等候区与舒缓陪伴氛围",
+    description: "把靠窗绿植、自然采光和休息动线单独呈现为第三张，轮播层次更清楚。",
   },
 ];
 
@@ -45,8 +48,15 @@ export function SpaceCarousel() {
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide) => (
-          <article key={slide.title} className="space-slide" data-focus={slide.focus}>
-            <div className="space-slide-image" aria-hidden="true" />
+          <article key={slide.title} className="space-slide">
+            <div
+              className="space-slide-image"
+              aria-hidden="true"
+              style={{
+                backgroundImage: `url("${slide.image}")`,
+                backgroundPosition: slide.imagePosition,
+              }}
+            />
             <div className="gallery-content">
               <span className="rating">{slide.label}</span>
               <h3>{slide.title}</h3>
@@ -68,10 +78,20 @@ export function SpaceCarousel() {
           ))}
         </div>
         <div className="space-nav" aria-label="轮播控制">
-          <button type="button" className="space-prev" aria-label="上一张" onClick={() => updateSlide(currentSlide - 1)}>
+          <button
+            type="button"
+            className="space-prev"
+            aria-label="上一张"
+            onClick={() => updateSlide(currentSlide - 1)}
+          >
             ‹
           </button>
-          <button type="button" className="space-next" aria-label="下一张" onClick={() => updateSlide(currentSlide + 1)}>
+          <button
+            type="button"
+            className="space-next"
+            aria-label="下一张"
+            onClick={() => updateSlide(currentSlide + 1)}
+          >
             ›
           </button>
         </div>
@@ -79,4 +99,3 @@ export function SpaceCarousel() {
     </div>
   );
 }
-

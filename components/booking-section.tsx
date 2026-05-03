@@ -1,6 +1,11 @@
 import { BookingForm } from "@/components/booking-form";
 import { Reveal } from "@/components/reveal";
 
+const storeAddress = "广东省东莞市大岭山镇南一路56号";
+const mapUrl = `https://uri.amap.com/search?keyword=${encodeURIComponent(
+  storeAddress,
+)}&city=东莞&view=map&src=mypage&coordinate=gaode&callnative=0`;
+
 export function BookingSection() {
   return (
     <section className="section" id="booking">
@@ -37,24 +42,33 @@ export function BookingSection() {
             <h3>立即预约</h3>
             <p>留下基础信息，我们会尽快联系你确认时间与服务项目。</p>
             <BookingForm />
-            <ul className="contact-list">
-              <li>
-                <span className="dot" />
-                营业时间：10:00 - 21:00
-              </li>
-              <li>
-                <span className="dot" />
-                门店地址：城市宠物友好街区 18 号
-              </li>
-              <li>
-                <span className="dot" />
-                预约电话：400-888-2026
-              </li>
-            </ul>
+            <div className="store-info" aria-label="门店信息">
+              <div className="store-map">
+                <iframe
+                  title="爪爪云洗护门店地图"
+                  src={mapUrl}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <ul className="contact-list">
+                <li>
+                  <span className="dot" />
+                  营业时间：10:00 - 21:00
+                </li>
+                <li>
+                  <span className="dot" />
+                  门店地址：{storeAddress}
+                </li>
+                <li>
+                  <span className="dot" />
+                  预约电话：400-888-2026
+                </li>
+              </ul>
+            </div>
           </article>
         </Reveal>
       </div>
     </section>
   );
 }
-
